@@ -14,6 +14,6 @@
     * - tape {VHSTape} Cassette to play in
     */
    function VHS(tape) {
-     this.tape = null;
+     this.tape = tape;
    };
  })();

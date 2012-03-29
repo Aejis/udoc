@@ -118,6 +118,15 @@ Example:
 
 If one or more parameters contains a key/value list - keys can be listed as a params after the corresponding parameter with two spaces identation or can be listed after the `Options:` keyword.
 
+```ruby
+# Params:
+# - title   {String} Title for paragraph
+# - options {Hash}   Options for paragraph
+#   - align  {String}  Text aligning (allowed: ["right", "justify", "left"])
+#   - margin {Integer} Margin in points
+#
+```
+
 `Options:` keyword should ends with reference to corresponding parameters, other rules is similar to the `Params:` tag:
 
 ```ruby
