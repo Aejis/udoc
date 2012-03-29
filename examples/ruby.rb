@@ -12,8 +12,8 @@
 #
 # Examples:
 #
-#   say('Hello', 2)
-#   # => 'Hello world\nHello world'
+#     say('Hello', 2)
+#     # => 'Hello world\nHello world'
 #
 # TODO:
 # - Refactor this shit
