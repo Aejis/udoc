@@ -100,6 +100,7 @@ Description can be ended with a `Deprecated!` standalone tag which indicates wha
 ### Params section:
 
 `Params:` should contains the list of parameters with following columns: 
+
 * parameter name - required
 * parameter type - optional, Should be wrapped into the curly braces. If parameter can have different types - it should be splitted with pipe `|`
 * parameter description - optional, Brief param desription. In cases when parameter optional or have a default value, description should ends with pointing to this in a parentheses: `(optional, default: false)`
