@@ -1,8 +1,8 @@
 ## General requirements:
 
-Documentation block should starts with a doubled comment symbol if applicable,
-in this case first section should starts from the next line. End of the block
-should contains empty comment line.
+Documentation block should start with a doubled comment symbol if applicable,
+in this case first section should start from the next line. End of the block
+should contain empty comment line.
 
 Examples:
 
@@ -41,31 +41,31 @@ class DoSomething {
 Most of the [Markdown syntax rules](http://daringfireball.net/projects/markdown/syntax)
 are applicable with following additions and recommendations:
 
-* Each section (except description) should starts with a keyword. Keyword must
-  be capitalized and ends with a colon, f.e.: `Public:`, `See also:` etc.
-* Minus sign are preffered for the lists
+* Each section (except description) should start with a keyword. Keyword must
+  be capitalized and should end with a colon, i.e. `Public:`, `See also:`.
+* Minus signs are preffered for the lists
 * Types, Constants, Classes and Namespaces should be wrapped into the curly
-  braces, f.e.: `{String}`, `{ActiveRecord::Base}`
+  braces, e.g.: `{String}`, `{ActiveRecord::Base}`
 * Inline html is not allowed
-* Headers and Blockqoutes is not recommended
+* Headers and Blockqoutes are not recommended
 
-If section have one line with less than 80 symbols, it is allowed to place this
-line directly after the keyword with prepended single space. Otherwise, text or
-list should starts with new line. (See examples below)
+If section has one line with less than 80 symbols, it is allowed to place this
+line directly after the keyword followed by single space. Otherwise, text or
+list should start with new line (see examples below).
 
 ## Structure
 
-All the sections are optional, but **Description**, `Params:` and `Returns:` is
+All the sections are optional, but **Description**, `Params:` and `Returns:` are
 highly recommended.
 
-Each section must ends with an empty comment line.
+Each section must end with an empty comment line.
 
 Sections and keywords must be ordered as listed in this document.
 
 ### Description section:
 
 It is highly recommended to have a description part for each
-method/class/variable/constant. Description can starts with one of the following
+method/class/variable/constant. Description can start with one of the following
 keywords (optional):
 
 * `Class:` – for class documentation
@@ -91,8 +91,8 @@ end
 ```
 
 For more complex documentation, you can provide the brief description on the
-first line and more detailed description on next paragraphs. Each paragraph
-should be splitted with an empty line:
+first line and more detailed description on next paragraphs. Paragraphs should
+be separated with an empty line:
 
 ```js
 /**
@@ -109,20 +109,20 @@ var EventDispatcher = (function() {
 ```
 
 Description can be ended with a `Deprecated!` standalone tag which indicates
-what code is deprecated and can be removed in next versions. In this case,
+that code is deprecated and can be removed in next versions. In this case,
 description section should explain reason of deprecation and alternatives for
 using instead.
 
 ### Params section:
 
-`Params:` should contains the list of parameters with following columns:
+`Params:` should contain the list of parameters with following columns:
 
 * parameter name - required
 * parameter type - optional, Should be wrapped into the curly braces. If
-  parameter can have different types - it should be splitted with pipe `|`
-* parameter description - optional, Brief param desription. In cases when
-  parameter optional or have a default value, description should ends with
-  pointing to this in a parentheses: `(optional, default: false)`
+  parameter has different types they should be splitted with pipe `|`
+* parameter description - optional, Brief param desription. If parameter is
+  optional or has a default value, description should end with mention of this
+  in a parentheses: `(optional, default: false)`
 
 It is recommended to align columns with spaces.
 
@@ -136,8 +136,8 @@ Example:
 #
 ```
 
-If one or more parameters contains a key/value list - keys can be listed as a
-params after the corresponding parameter with two spaces identation or can be
+If one or more parameters contain a key/value list - keys can be listed as a
+params after the corresponding parameter with two spaces indentation or can be
 listed after the `Options:` keyword.
 
 ```ruby
@@ -149,8 +149,8 @@ listed after the `Options:` keyword.
 #
 ```
 
-`Options:` keyword should ends with reference to corresponding parameters, other
-rules is similar to the `Params:` tag:
+`Options:` keyword should end with reference to corresponding parameters, other
+rules are similar to the `Params:` tag:
 
 ```ruby
 # Params:
@@ -172,10 +172,10 @@ rules is similar to the `Params:` tag:
 
 ### Examples section:
 
-Examples section should starts with `Examples:` keyword. Each example can have a
+Examples section should start with `Examples:` keyword. Each example can have a
 description like in Description section, but without any keyword.
 
-Code should have 4 space identation and separates with empty comment lines
+Code should have 4 space indentation and be separated with empty comment lines
 before and after.
 
 ```js
@@ -207,20 +207,20 @@ fixed:
 #
 ```
 
-`Notes:` keyword for various notes, workaround descriptions or explanation why
-it was done so and not otherwise.
+`Notes:` keyword is used for various notes, workaround descriptions or various
+explanations.
 
-`See also:` references to another methods, classes, libraries or documentation
+`See also:` references to another methods, classes, libraries or documentation.
 
-`Known issues:` list of issues which can not be fixed for now.
+`Known issues:` provides a list of issues which can not be fixed for now.
 
 ### Results section:
 
-`Raises:` – list of exceptions, which can be raised by this method/function and
+`Raises:` – list of exceptions which can be raised by this method/function and
 conditions that cause them.
 
-`Returns:`, `Renders:`, `Redirects:` – keywords which describes what
-method/function should return or render (for MVC controllers, f.e.)
+`Returns:`, `Renders:`, `Redirects:` – keywords which describe what
+method/function should return or render (for MVC controllers, etc)
 
 ```ruby
 # Raises:
