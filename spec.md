@@ -26,16 +26,6 @@ def do_something
 end
 ```
 
-**C++**
-
-```cpp
-////
-// Awesome class
-//
-class DoSomething {
-}
-```
-
 ## Syntax:
 
 Most of the [Markdown syntax rules](http://daringfireball.net/projects/markdown/syntax)
