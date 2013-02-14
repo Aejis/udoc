@@ -45,13 +45,22 @@ list should start with new line (see examples below).
 
 ## Structure
 
-All the sections are optional, but **Description**, `Params:` and `Returns:` are
-highly recommended.
+There is a list of sections available:
+* [Description](#section_description)
+* [Params](#section_params)
+* [Results](#section_results)
+* [Examples](#section_examples)
+* [Information](#section_information)
+
+All the sections are optional, but [Description](#section_description),
+[Params](#section_params) and [Results](#section_results) are highly
+recommended.
 
 Each section must end with an empty comment line.
 
-Sections and keywords must be ordered as listed in this document.
+Sections and keywords must be ordered as listed above.
 
+<a name="section_description"></a>
 ### Description section:
 
 It is highly recommended to have a description part for each
@@ -103,6 +112,7 @@ that code is deprecated and can be removed in next versions. In this case,
 description section should explain reason of deprecation and alternatives for
 using instead.
 
+<a name="section_params"></a>
 ### Params section:
 
 `Params:` should contain the list of parameters with following columns:
@@ -160,6 +170,25 @@ rules are similar to the `Params:` tag:
 
 `Yields:` keyword describes given block
 
+<a name="section_results"></a>
+### Results section:
+
+`Returns:`, `Renders:`, `Redirects:` – keywords which describe what
+method/function should return or render (for MVC controllers, etc)
+
+`Raises:` – list of exceptions which can be raised by this method/function and
+conditions that cause them.
+
+```ruby
+# Raises:
+# - {NoMethodError} if method is not applicable
+# - {TimeoutError}  if max request time reached
+#
+# Returns: {String} Response body
+#
+```
+
+<a name="section_examples"></a>
 ### Examples section:
 
 Examples section should start with `Examples:` keyword. Each example can have a
@@ -183,6 +212,7 @@ before and after.
  */
 ```
 
+<a name="section_information"></a>
 ### Information section:
 
 `TODO:` and `FIXME:` keywords – text or list of what needs to be implemented or
@@ -203,20 +233,3 @@ explanations.
 `See also:` references to another methods, classes, libraries or documentation.
 
 `Known issues:` provides a list of issues which can not be fixed for now.
-
-### Results section:
-
-`Raises:` – list of exceptions which can be raised by this method/function and
-conditions that cause them.
-
-`Returns:`, `Renders:`, `Redirects:` – keywords which describe what
-method/function should return or render (for MVC controllers, etc)
-
-```ruby
-# Raises:
-# - {NoMethodError} if method is not applicable
-# - {TimeoutError}  if max request time reached
-#
-# Returns: {String} Response body
-#
-```
