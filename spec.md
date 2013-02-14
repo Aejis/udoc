@@ -46,21 +46,20 @@ list should start with new line (see examples below).
 ## Structure
 
 There is a list of sections available:
-* [Description](#section_description)
-* [Params](#section_params)
-* [Results](#section_results)
-* [Examples](#section_examples)
-* [Information](#section_information)
+* [Description](#description-section)
+* [Params](#params-section)
+* [Results](#results-section)
+* [Examples](#examples-section)
+* [Information](#information-section)
 
-All the sections are optional, but [Description](#section_description),
-[Params](#section_params) and [Results](#section_results) are highly
+All the sections are optional, but [Description](#description-section),
+[Params](#params-section) and [Results](#results-section) are highly
 recommended.
 
 Each section must end with an empty comment line.
 
 Sections and keywords must be ordered as listed above.
 
-<a name="section_description"></a>
 ### Description section:
 
 It is highly recommended to have a description part for each
@@ -112,7 +111,6 @@ that code is deprecated and can be removed in next versions. In this case,
 description section should explain reason of deprecation and alternatives for
 using instead.
 
-<a name="section_params"></a>
 ### Params section:
 
 `Params:` should contain the list of parameters with following columns:
@@ -170,7 +168,6 @@ rules are similar to the `Params:` tag:
 
 `Yields:` keyword describes given block
 
-<a name="section_results"></a>
 ### Results section:
 
 `Returns:`, `Renders:`, `Redirects:` – keywords which describe what
@@ -188,7 +185,6 @@ conditions that cause them.
 #
 ```
 
-<a name="section_examples"></a>
 ### Examples section:
 
 Examples section should start with `Examples:` keyword. Each example can have a
@@ -212,7 +208,6 @@ before and after.
  */
 ```
 
-<a name="section_information"></a>
 ### Information section:
 
 `TODO:` and `FIXME:` keywords – text or list of what needs to be implemented or
