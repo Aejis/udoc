@@ -147,14 +147,20 @@ listed after the `Options:` keyword.
 #
 ```
 
-`Options:` keyword should end with reference to corresponding parameters, other
-rules are similar to the `Params:` tag:
+`Options:` keyword should end with reference to corresponding parameters.
+Rules are similar to the `Params:` tag.
+`Hash`, `Array` (with positional elements) and other non-primitive argument
+should be described as well.
+If you are using collection of objects make sure object is defined and described
+as well.
 
 ```ruby
 # Params:
 # - name        {String} Tag name
 # - tag_options {Hash}   Semantic options for tag
 # - attributes  {Hash}   HTML attributes
+# - categories  {Array}  List of categories
+# - paragraphs  {Array(Paragraph)} Collection of paragraphs
 #
 # Options (tag_options):
 # - single {Boolean} Tag is single?
@@ -164,6 +170,11 @@ rules are similar to the `Params:` tag:
 # - class {String|Array}   Class name or list of names (optional)
 # - value {String|Integer} Value for the input (optional)
 #
+# Option (categories):
+# - 0     {String}    Primary category
+# - 1     {String}    Secondary category
+#
+def article_tag(name, tag_options, attributes, categories, paragraphs)
 ```
 
 `Yields:` keyword describes given block
