@@ -155,11 +155,22 @@ should be described as well.
 
 Collection (as well as collection items) could be documented elsewhere.
 
+Param could have multiline description. Paragraphs should be separated with an
+empty line. Using indentation is strongly recommended.
+
 ```ruby
 # Params:
 # - name        {String} Tag name
 # - tag_options {Hash}   Semantic options for tag
 # - attributes  {Hash}   HTML attributes
+#
+#                        HTML attributes may include such options as :class,
+#                        :style, etc.
+#
+#                        Data-attributes could be given individually (
+#                        e.g. :data-attr => 'value') or as a hash (
+#                        e.g. :data => {:key => 'value', :key2 => 'value2'}).
+#
 # - categories  {Array}  List of categories
 # - paragraphs  {Array(Paragraph)} Collection of paragraphs
 #
