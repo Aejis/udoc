@@ -149,8 +149,10 @@ listed after the `Options:` keyword.
 
 `Options:` keyword should end with reference to corresponding parameters.
 Rules are similar to the `Params:` tag.
+
 `Hash`, `Array` (with positional elements) and other non-primitive argument
 should be described as well.
+
 Collection (as well as collection items) could be documented elsewhere.
 
 ```ruby
