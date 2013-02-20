@@ -151,8 +151,7 @@ listed after the `Options:` keyword.
 Rules are similar to the `Params:` tag.
 `Hash`, `Array` (with positional elements) and other non-primitive argument
 should be described as well.
-If you are using collection of objects make sure object is defined and described
-as well.
+Collection (as well as collection items) could be documented elsewhere.
 
 ```ruby
 # Params:
