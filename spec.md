@@ -1,6 +1,8 @@
 ## General requirements:
 
-Documentation block should starts with a doubled comment symbol if applicable, in this case first section should starts from the next line. End of the block should contains empty comment line.
+Documentation block should start with a doubled comment symbol if applicable,
+in this case first section should start from the next line. End of the block
+should contain empty comment line.
 
 Examples:
 
@@ -24,39 +26,45 @@ def do_something
 end
 ```
 
-**C++**
-
-```cpp
-////
-// Awesome class
-//
-class DoSomething {
-}
-```
-
 ## Syntax:
 
-Most of the [Markdown syntax rules](http://daringfireball.net/projects/markdown/syntax) are applicable with following additions and recommendations:
+Most of the [Markdown syntax rules](http://daringfireball.net/projects/markdown/syntax)
+are applicable with following additions and recommendations:
 
-* Each section (except description) should starts with a keyword. Keyword must be capitalized and ends with a colon, f.e.: `Public:`, `See also:` etc.
-* Minus sign are preffered for the lists
-* Types, Constants, Classes and Namespaces should be wrapped into the curly braces, f.e.: `{String}`, `{ActiveRecord::Base}`
+* Each section (except description) should start with a keyword. Keyword must
+  be capitalized and should end with a colon, i.e. `Public:`, `See also:`.
+* Minus signs are preffered for the lists
+* Types, Constants, Classes and Namespaces should be wrapped into the curly
+  braces, e.g.: `{String}`, `{ActiveRecord::Base}`
 * Inline html is not allowed
-* Headers and Blockqoutes is not recommended
+* Headers and Blockqoutes are not recommended
 
-If section have one line with less than 80 symbols, it is allowed to place this line directly after the keyword with prepended single space. Otherwise, text or list should starts with new line. (See examples below)
+If section has one line with less than 80 symbols, it is allowed to place this
+line directly after the keyword followed by single space. Otherwise, text or
+list should start with new line (see examples below).
 
 ## Structure
 
-All the sections are optional, but **Description**, `Params:` and `Returns:` is highly recommended.
+There is a list of sections available:
+* [Description](#description-section)
+* [Params](#params-section)
+* [Results](#results-section)
+* [Examples](#examples-section)
+* [Information](#information-section)
 
-Each section must ends with an empty comment line.
+All the sections are optional, but [Description](#description-section),
+[Params](#params-section) and [Results](#results-section) are highly
+recommended.
 
-Sections and keywords must be ordered as listed in this document.
+Each section must end with an empty comment line.
+
+Sections and keywords must be ordered as listed above.
 
 ### Description section:
 
-It is highly recommended to have a description part for each method/class/variable/constant. Description can starts with one of the following keywords (optional):
+It is highly recommended to have a description part for each
+method/class/variable/constant. Description can start with one of the following
+keywords (optional):
 
 * `Class:` – for class documentation
 * `Module:` – for module documentation
@@ -67,7 +75,8 @@ It is highly recommended to have a description part for each method/class/variab
 * `Abstract:` – mark as abstract method/class
 * `Private:` – for private methods
 
-Also you can use another keyword, which indicates that the method/class corresponds to commonly used design patterns.
+Also you can use another keyword, which indicates that the method/class
+corresponds to commonly used design patterns.
 
 If needed, you can chain the keywords in logical order:
 
@@ -79,15 +88,17 @@ class AbstractAdapter
 end
 ```
 
-For more complex documentation, you can provide the brief description on the first line and more detailed description on next paragraphs. Each paragraph should be splitted with an empty line:
+For more complex documentation, you can provide the brief description on the
+first line and more detailed description on next paragraphs. Paragraphs should
+be separated with an empty line:
 
 ```js
 /**
  * Class: Event dispatcher
  *
- * Determine event type and dispatch corresponding 
+ * Determine event type and dispatch corresponding
  * event handlers in order of addition.
- * 
+ *
  * Also provides event bubbling and capturing.
  */
 var EventDispatcher = (function() {
@@ -95,15 +106,21 @@ var EventDispatcher = (function() {
 })();
 ```
 
-Description can be ended with a `Deprecated!` standalone tag which indicates what code is deprecated and can be removed in next versions. In this case, description section should explain reason of deprecation and alternatives for using instead.
+Description can be ended with a `Deprecated!` standalone tag which indicates
+that code is deprecated and can be removed in next versions. In this case,
+description section should explain reason of deprecation and alternatives for
+using instead.
 
 ### Params section:
 
-`Params:` should contains the list of parameters with following columns: 
+`Params:` should contain the list of parameters with following columns:
 
 * parameter name - required
-* parameter type - optional, Should be wrapped into the curly braces. If parameter can have different types - it should be splitted with pipe `|`
-* parameter description - optional, Brief param desription. In cases when parameter optional or have a default value, description should ends with pointing to this in a parentheses: `(optional, default: false)`
+* parameter type - optional, Should be wrapped into the curly braces. If
+  parameter has different types they should be splitted with pipe `|`
+* parameter description - optional, Brief param desription. If parameter is
+  optional or has a default value, description should end with mention of this
+  in a parentheses: `(optional, default: false)`
 
 It is recommended to align columns with spaces.
 
@@ -117,7 +134,9 @@ Example:
 #
 ```
 
-If one or more parameters contains a key/value list - keys can be listed as a params after the corresponding parameter with two spaces identation or can be listed after the `Options:` keyword.
+If one or more parameters contain a key/value list - keys can be listed as a
+params after the corresponding parameter with two spaces indentation or can be
+listed after the `Options:` keyword.
 
 ```ruby
 # Params:
@@ -128,13 +147,32 @@ If one or more parameters contains a key/value list - keys can be listed as a pa
 #
 ```
 
-`Options:` keyword should ends with reference to corresponding parameters, other rules is similar to the `Params:` tag:
+`Options:` keyword should end with reference to corresponding parameters.
+Rules are similar to the `Params:` tag.
+
+`Hash`, `Array` (with positional elements) and other non-primitive argument
+should be described as well.
+
+Collection (as well as collection items) could be documented elsewhere.
+
+Param could have multiline description. Paragraphs should be separated with an
+empty line. Using indentation is strongly recommended.
 
 ```ruby
 # Params:
 # - name        {String} Tag name
 # - tag_options {Hash}   Semantic options for tag
 # - attributes  {Hash}   HTML attributes
+#
+#                        HTML attributes may include such options as :class,
+#                        :style, etc.
+#
+#                        Data-attributes could be given individually (
+#                        e.g. :data-attr => 'value') or as a hash (
+#                        e.g. :data => {:key => 'value', :key2 => 'value2'}).
+#
+# - categories  {Array}  List of categories
+# - paragraphs  {Array(Paragraph)} Collection of paragraphs
 #
 # Options (tag_options):
 # - single {Boolean} Tag is single?
@@ -144,21 +182,45 @@ If one or more parameters contains a key/value list - keys can be listed as a pa
 # - class {String|Array}   Class name or list of names (optional)
 # - value {String|Integer} Value for the input (optional)
 #
+# Option (categories):
+# - 0     {String}    Primary category
+# - 1     {String}    Secondary category
+#
+def article_tag(name, tag_options, attributes, categories, paragraphs)
 ```
 
 `Yields:` keyword describes given block
 
+### Results section:
+
+`Returns:`, `Renders:`, `Redirects:` – keywords which describe what
+method/function should return or render (for MVC controllers, etc)
+
+`Raises:` – list of exceptions which can be raised by this method/function and
+conditions that cause them.
+
+```ruby
+# Raises:
+# - {NoMethodError} if method is not applicable
+# - {TimeoutError}  if max request time reached
+#
+# Returns: {String} Response body
+#
+```
+
 ### Examples section:
 
-Examples section should starts with `Examples:` keyword. Each example can have a description like in Description section, but without any keyword.
+Examples section should start with `Examples:` keyword. Each example can have a
+description like in Description section, but without any keyword.
 
-Code should have 4 space identation and separates with empty comment lines before and after.
+Code should have 4 space indentation and be separated with empty comment lines
+before and after.
 
 ```js
-/** 
+/**
  * Examples:
  *
- * Get value 
+ * Get value
  *
  *     $("#search").val();
  *
@@ -171,34 +233,21 @@ Code should have 4 space identation and separates with empty comment lines befor
 
 ### Information section:
 
-`TODO:` and `FIXME:` keywords – text or list of what needs to be implemented or fixed:
+`TODO:` and `FIXME:` keywords – text or list of what needs to be implemented or
+fixed:
 
 ```ruby
 # TODO: catch exceptions
-# 
+#
 # FIXME:
 # - crash when name contains brace
 # - returning float is not allowed
 #
 ```
 
-`Notes:` keyword for various notes, workaround descriptions or explanation why it was done so and not otherwise.
+`Notes:` keyword is used for various notes, workaround descriptions or various
+explanations.
 
-`See also:` references to another methods, classes, libraries or documentation
+`See also:` references to another methods, classes, libraries or documentation.
 
-`Known issues:` list of issues which can not be fixed for now.
-
-### Results section:
-
-`Raises:` – list of exceptions, which can be raised by this method/function and conditions that cause them.
-
-`Returns:`, `Renders:`, `Redirects:` – keywords which describes what method/function should return or render (for MVC controllers, f.e.)
-
-```ruby
-# Raises:
-# - {NoMethodError} if method is not applicable
-# - {TimeoutError}  if max request time reached
-#
-# Returns: {String} Response body
-#
-```
+`Known issues:` provides a list of issues which can not be fixed for now.
